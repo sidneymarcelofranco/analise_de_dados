@@ -1,10 +1,13 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
+*.pyo
+*.pyd
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
+*.egg
 
 # Virtual environments
 .venv/
@@ -17,6 +20,9 @@ pip-wheel-metadata/
 # Node.js
 node_modules/
 libs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Flask instance folder
 instance/
@@ -25,11 +31,18 @@ instance/
 
 # Logs
 *.log
+logs/
 
 # Coverage reports
 .coverage
 htmlcov/
 .coverage.*
+.pytest_cache/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.nyc_output/
 
 # VS Code settings
 .vscode/
@@ -40,17 +53,29 @@ htmlcov/
 Thumbs.db
 desktop.ini
 
-# Test output
-*.pytest_cache/
-.cache/
-nosetests.xml
-coverage.xml
-*.cover
-*.pyc
-
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Env files
+# Environment files
 .env
 .env.*
+.env.local
+.env.production
+
+# IDEs
+*.swp
+*.swo
+*~
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Vercel
+.vercel
+
+# Database migrations (Flask-Migrate)
+migrations/versions/*.pyc
