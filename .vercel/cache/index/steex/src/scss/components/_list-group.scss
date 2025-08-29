@@ -1,0 +1,21 @@
+//
+// _list-group.scss
+//
+
+.list-group-item {
+    margin-bottom: 0px;
+
+    .list-text {
+        color: var(--#{$prefix}secondary-color);
+    }
+
+    &.active {
+        .list-title {
+            color: $white;
+        }
+
+        .list-text {
+            color: rgba($white, 0.50);
+        }
+    }
+}

@@ -1,0 +1,225 @@
+//
+// Theme Modern
+//
+
+[data-theme="modern"] {
+
+    $primary:                   #7ac19b;
+    $secondary:                 #f3ce8e;
+    $danger:                    #f7a3ae;
+    $warning:                   #f9b85a;
+    $info:                      #7dcbf7;
+    $success:                   #76d5bf;
+    $dark:                      #3f425e;
+    $light:                     #f7f7f7;
+
+    $font-sizes: (
+        "3xs":          0.6875rem,
+        "2xs":          0.75rem,
+        "xs":           0.8125rem,
+        "sm":           0.875rem,
+        "md":           0.9375rem,
+        "base":         0.875rem,
+        "lg":           1.0625rem,
+        "xl":           1.125rem,
+        "2xl":          1.1875rem,
+        "3xl":          1.25rem,
+        "4xl":          1.375rem,
+        "5xl":          1.5rem,
+    );
+
+    $font-weights: (
+        "light"         300,
+        "normal"        400,
+        "medium"        600,
+        "semibold"      700,
+        "bold"          800,
+    );
+
+    // Font Family
+    --#{$prefix}font-sans-serif:                                     "Gantari" ,sans-serif;
+    --#{$prefix}font-monospace:                                      "Gantari" ,sans-serif;
+    
+    --#{$prefix}body-bg:                                       #f7f7f7;
+
+    --#{$prefix}shadow:                                         rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --#{$prefix}shadow-sm:                                      0 .125rem .25rem  rgba(#{$black}, .075);
+    --#{$prefix}shadow-lg:                                      0 5px 10px  rgba(30, 32, 37, 0.12); 
+    --#{$prefix}element-shadow:                                 none;
+
+    --#{$prefix}grid-gutter-width:                              1rem;
+    
+    //border-radius
+    --#{$prefix}border-radius:                                  0.50rem;
+    
+    --#{$prefix}card-border-width-custom:                       0;
+    --#{$prefix}card-header-border-width:                       1px;
+    --#{$prefix}card-bottom-padding:                            1.2rem;
+    --#{$prefix}card-shadow:                                    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    
+    //mailbox 
+    --#{$prefix}email-bg:                                          #f8f9fd;
+    --#{$prefix}email-sidebar-bg:                                  #ebf2fb;
+
+    // vertical
+    --#{$prefix}vertical-menu-width:                            250px;
+    --#{$prefix}vertical-menu-width-md:                         180px;
+    --#{$prefix}vertical-menu-width-sm:                         70px;
+    --#{$prefix}header-height:                                  70px;
+    //two columns
+    --#{$prefix}twocolumn-menu-width:                           220px;
+    --#{$prefix}twocolumn-menu-iconview-width:                  70px;
+    --#{$prefix}twocolumn-menu-box-shadow:                      0 2px 4px rgba(15, 34, 58, 0.12);
+
+    //topbar
+    --#{$prefix}page-title-box-shadow:                          0 1px 2px rgba(56, 65, 74, 0.15);
+    --#{$prefix}page-title-border:                              none;
+
+    //  vertical
+    --#{$prefix}vertical-menu-box-shadow:                       0 2px 4px rgba(15, 34, 58, 0.12);
+    --#{$prefix}vertical-menu-item-font-size:                   0.875rem;
+    --#{$prefix}vertical-menu-sub-item-font-size:               0.875rem;
+    --#{$prefix}vertical-menu-item-font-weight:                 400;
+
+    //vertical light
+    &[data-sidebar="light"] {
+        --#{$prefix}vertical-menu-bg:                           #{$white};
+        --#{$prefix}vertical-menu-border:                       #{$border-color};
+        --#{$prefix}vertical-menu-item-color:                   #{darken($gray-600, 10%)};
+        --#{$prefix}vertical-menu-item-hover-color:             var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-hover-bg:                var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-active-color:            var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-active-bg:               #{rgba($primary, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:               #{darken($gray-600, 4%)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:         var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-sub-item-active-color:        var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-title-color:                  #919da9;
+        --#{$prefix}twocolumn-menu-iconview-bg:                 #{$white};
+    }
+    
+    // Topbar - (Default Light)
+    &[data-topbar="light"] {
+        --#{$prefix}header-bg:                                      #{$white};
+        --#{$prefix}header-item-color:                              #{$gray-800};
+        --#{$prefix}header-item-sub-color:                          var(--#{$prefix}secondary-color);
+        --#{$prefix}header-border-color:                            #{$gray-200};
+        // Topbar User
+        --#{$prefix}topbar-user-bg:                                 #{rgba($white, .05)};
+        // Horizontal nav
+        --#{$prefix}topnav-bg:                                      #{$white};
+        --#{$prefix}topnav-item-color:                              #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-item-color-active:                       #{$primary};
+        --#{$prefix}topnav-sub-item-color:                          #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-sub-item-color-active:                   #{$primary};
+    }
+    
+    //footer
+    --#{$prefix}footer-bg:                                      #{$white};
+    --#{$prefix}footer-color:                                   #98a6ad;
+
+    // twocolumn menu
+    --#{$prefix}twocolumn-menu-bg:                              #{$white};
+
+    // boxed 
+    --#{$prefix}boxed-body-bg:                                  #f5f5f5;
+
+    &[data-sidebar="dark"] {
+        --#{$prefix}vertical-menu-bg:                           #{shift-color($dark, 10%)};
+        --#{$prefix}vertical-menu-border:                       #{shift-color($dark, 10%)};
+        --#{$prefix}vertical-menu-item-color:                   #{tint-color($dark, 50%)};
+        --#{$prefix}vertical-menu-item-hover-color:             #{tint-color($dark, 90%)};
+        --#{$prefix}vertical-menu-item-hover-bg:                #{tint-color($dark, 1%)};
+        --#{$prefix}vertical-menu-item-active-color:            #{tint-color($dark, 90%)};
+        --#{$prefix}vertical-menu-item-active-bg:               #{tint-color($dark, 1%)};
+        --#{$prefix}vertical-menu-sub-item-color:               #{tint-color($dark, 50%)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:         #{tint-color($dark, 90%)};
+        --#{$prefix}vertical-menu-sub-item-active-color:        #{tint-color($dark, 90%)};
+        --#{$prefix}vertical-menu-title-color:                  #{tint-color($dark, 50%)};
+        --#{$prefix}twocolumn-menu-iconview-bg:                 #{shift-color($dark, 15%)};
+    }
+
+    &[data-topbar="dark"] {
+        --#{$prefix}header-bg:                                  #{shift-color($dark, 60%)};
+        --#{$prefix}header-item-color:                          #{tint-color($dark, 50%)};
+        --#{$prefix}header-border-color:                        #{shift-color($dark, 45%)};
+        --#{$prefix}topbar-user-bg:                             #{rgba($white, .05)};
+        --#{$prefix}topbar-user-color:                          #{tint-color($dark, 50%)};
+        --#{$prefix}topnav-bg:                                  #{shift-color($dark, 60%)};
+        --#{$prefix}topnav-item-color:                          #{tint-color($dark, 50%)};
+        --#{$prefix}topnav-item-color-active:                   #{$white};
+        --#{$prefix}topnav-sub-item-color:                      #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-sub-item-color-active:               #{$primary};
+    }
+
+    &:is([data-sidebar="gradient"], [data-sidebar="gradient-2"], [data-sidebar="gradient-3"], [data-sidebar="gradient-4"]) {
+        --#{$prefix}vertical-menu-item-color:                 #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-item-active-bg:             #{rgba($white, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:             #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #{rgba($white, .50)};
+    }
+
+    &[data-sidebar="gradient"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}vertical-menu-border:                     #{$cyan-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$cyan-900};
+    }
+
+    &[data-sidebar="gradient-2"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}vertical-menu-border:                     #{$teal-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$teal-800};
+    }
+
+    &[data-sidebar="gradient-3"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}vertical-menu-border:                     #{$purple-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$purple-800};
+    }
+
+    &[data-sidebar="gradient-4"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}vertical-menu-border:                     #{$green-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$green-800};
+    }
+
+    $custom-theme-colors: (
+        "primary":          $primary,
+        "secondary":        $secondary,
+        "danger":           $danger,
+        "warning":          $warning,
+        "info":             $info,
+        "success":          $success,
+        "dark":             $dark,
+        "light":            $light
+    );
+    
+    @each $name, $value in $custom-theme-colors {   
+        --#{$prefix}#{$name}:                                        #{$value};
+        --#{$prefix}#{$name}-rgb:                                    #{to-rgb($value)};
+        --#{$prefix}#{$name}-bg-subtle:                              #{rgba($value, 0.15)};
+        --#{$prefix}#{$name}-border-subtle:                          #{rgba($value, 0.30)};
+        --#{$prefix}#{$name}-text-emphasis:                          #{shade-color($value, 20%)};
+    }
+    
+    --#{$prefix}link-color:                                         #{$primary};
+    --#{$prefix}link-color-rgb:                                     #{to-rgb($primary)};
+    --#{$prefix}link-hover-color:                                   #{shade-color($primary, 20%)};
+    --#{$prefix}link-hover-color-rgb:                               #{to-rgb(shade-color($primary, 20%))};
+
+    @each $name, $value in $font-sizes { 
+        --#{$prefix}font-#{$name}:   #{$value};
+    }
+
+    @each $name, $value in $font-weights { 
+        --#{$prefix}font-weight-#{$name}:   #{$value};
+    }
+}
+

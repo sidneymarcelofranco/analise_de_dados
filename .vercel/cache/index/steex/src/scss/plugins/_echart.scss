@@ -1,0 +1,26 @@
+//
+// echarts.scss
+//
+
+.e-charts {
+    height: 350px;
+
+    > div:nth-child(2) {
+        color: var(--#{$prefix}secondary-color) !important;
+        background-color: var(--#{$prefix}secondary-bg) !important;
+        font-size: $font-size-base !important;
+        font-family: $font-family-base !important;
+        box-shadow: $box-shadow-lg !important;
+        border-color: var(--#{$prefix}border-color) !important;
+        
+        span {
+            color: var(--#{$prefix}emphasis-color) !important;
+            font-size: $font-size-base !important;
+
+        }
+    }
+}
+
+.e-charts-height {
+    height: 300px;
+}

@@ -1,0 +1,186 @@
+//
+// _helper.scss
+//
+
+.fs-3xs {
+    font-size: var(--#{$prefix}font-3xs) !important;
+}
+
+.fs-2xs {
+    font-size: var(--#{$prefix}font-2xs) !important;
+}
+
+.fs-xs {
+    font-size: var(--#{$prefix}font-xs) !important;
+}
+
+.fs-sm {
+    font-size: var(--#{$prefix}font-sm) !important;
+}
+
+.fs-md {
+    font-size: var(--#{$prefix}font-md) !important;
+}
+
+.fs-base {
+    font-size: var(--#{$prefix}font-base) !important;
+}
+
+.fs-lg {
+    font-size: var(--#{$prefix}font-lg) !important;
+}
+
+.fs-xl {
+    font-size: var(--#{$prefix}font-xl) !important;
+}
+
+.fs-2xl {
+    font-size: var(--#{$prefix}font-2xl) !important;
+}
+
+.fs-3xl {
+    font-size: var(--#{$prefix}font-3xl) !important;
+}
+
+.fs-4xl {
+    font-size: var(--#{$prefix}font-4xl) !important;
+}
+
+.fs-5xl {
+    font-size: var(--#{$prefix}font-5xl) !important;
+}
+
+// Font Family
+
+.ff-primary {
+    font-family: $font-family-base;
+}
+
+.ff-secondary {
+    font-family: $font-family-monospace;
+}
+
+// Backgroun pattern
+.bg-pattern {
+    background: url("../images/modal-bg.png") $modal-content-bg;
+}
+
+// Fixed minimum width
+.w-xs {
+    min-width: 80px;
+}
+
+.w-sm {
+    min-width: 95px;
+}
+
+.w-md {
+    min-width: 110px;
+}
+
+.w-lg {
+    min-width: 140px;
+}
+
+.w-xl {
+    min-width: 160px;
+}
+
+// Search 
+.search-box {
+    position: relative;
+
+    .form-control {
+        padding-left: 40px;
+    }
+
+    .search-icon {
+        font-size: var(--#{$prefix}font-md);
+        position: absolute;
+        left: 13px;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: var(--#{$prefix}secondary-color);
+    }
+}
+
+
+// overlay
+.bg-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+    background-color: $black;
+}
+
+// Btn Customizer
+.customizer-setting {
+    position: fixed;
+    bottom: 50%;
+    right: 0;
+    z-index: 1000;
+
+    .btn {
+        writing-mode: vertical-rl;
+    }
+}
+
+// 
+code {
+    user-select: all;
+}
+
+// text-truncate-two-lines
+.text-truncate-two-lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+// card
+.card-logo-light {
+    display: var(--#{$prefix}card-logo-light);
+}
+
+.card-logo-dark {
+    display: var(--#{$prefix}card-logo-dark);
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 35px;
+    right: 28px;
+    transition: all 0.5s ease;
+    display: none;
+    z-index: 1000;
+
+    &:hover {
+        animation: fade-up 1.5s infinite linear;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.e-charts {
+    height: 350px;
+}

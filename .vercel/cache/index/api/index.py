@@ -1,11 +1,18 @@
-from flask import Flask
+from steex import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
+if __name__ == '__main__':
+    app.run()
 
-@app.route('/about')
-def about():
-    return 'About'
+# from flask import Flask
+
+# app = Flask(__name__)
+
+# @app.route('/')
+# def home():
+#     return 'Hello, World!'
+
+# @app.route('/about')
+# def about():
+#     return 'About'

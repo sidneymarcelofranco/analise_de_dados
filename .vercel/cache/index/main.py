@@ -1,6 +1,6 @@
-def main():
-    print("Hello from analise-de-dados!")
+from steex import create_app
 
+app = create_app()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    app.run(debug=True)

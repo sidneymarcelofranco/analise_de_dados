@@ -1,0 +1,18 @@
+// 
+// _colored-links.scss
+// 
+
+@each $color,
+$value in $theme-colors {
+    .link-#{$color} {
+        color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}link-opacity, 1));
+
+        @if $link-shade-percentage !=0 {
+
+            &:hover,
+            &:focus {
+                color: var(--#{$prefix}#{$color}-text-emphasis);
+            }
+        }
+    }
+}

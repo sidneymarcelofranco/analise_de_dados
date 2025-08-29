@@ -1,0 +1,123 @@
+// 
+// _table.scss
+// 
+
+.table {
+    >thead {
+        border-color: var(--#{$prefix}table-border-color);
+    }
+
+    >:not(:first-child) {
+        border-top-width: $table-border-width;
+    }
+}
+
+
+.table-nowrap {
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+// card table
+
+.table-card {
+    margin: (-$card-spacer-y) (-$card-spacer-x);
+
+    th,
+    td {
+
+        &:first-child {
+            padding-left: var(--#{$prefix}card-spacer-x);
+        }
+
+        &:last-child {
+            padding-right: var(--#{$prefix}card-spacer-x);
+        }
+    }
+
+    .table> :not(:first-child) {
+        border-top-width: $table-border-width;
+    }
+}
+
+.table {
+    .form-check {
+        padding-left: 0px;
+        margin-bottom: 0px;
+
+        .form-check-input {
+            margin-left: 0px;
+            margin-top: 0px;
+            float: none;
+            vertical-align: middle;
+        }
+    }
+
+    .sort {
+        position: relative;
+        padding-right: calc(#{$table-cell-padding-x} * 2.25);
+
+        &::before {
+            content: "\f035d";
+            position: absolute;
+            right: 0.5rem;
+            top: 16px;
+            font-size: 0.8rem;
+            font-family: "Material Design Icons";
+        }
+
+        &::after {
+            position: absolute;
+            right: 0.5rem;
+            content: "\f0360";
+            font-family: "Material Design Icons";
+            font-size: 0.8rem;
+            top: 10px;
+        }
+    }
+}
+
+.table-custom-effect {
+    tr {
+        border-left: 2px solid transparent;
+        &.table-active{
+            border-left-color: $primary;
+        }
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    .border-#{$state} {
+        &.table {
+            >thead {
+                border-color: var(--#{$prefix}#{$state}) !important;
+                border-bottom-color: var(--#{$prefix}#{$state}) !important;
+            }
+        }
+    }
+}
+
+/* ===== Dark Scrollbar CSS ===== */
+/* Firefox */
+[data-bs-theme="dark"] {
+    *::-webkit-scrollbar-track {
+        background: var(--#{$prefix}secondary-bg);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--#{$prefix}light);
+        border: 3px solid var(--#{$prefix}secondary-bg);
+    }
+}
+
+.table-custom {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    tr {
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+}

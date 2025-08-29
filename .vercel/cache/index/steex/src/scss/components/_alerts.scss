@@ -1,0 +1,141 @@
+//
+// alerts.scss
+//
+
+.alert {
+    box-shadow: var(--#{$prefix}element-shadow);
+}
+
+// alert-label-icon
+.alert-label-icon {
+    position: relative;
+    padding-left: 60px;
+    border: 0;
+
+    .label-icon {
+        position: absolute;
+        width: 45px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($white, 0.15);
+        font-size: var(--#{$prefix}font-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // label arrow
+    &.label-arrow {
+        overflow: hidden;
+
+        .label-icon {
+            &:after {
+                content: "";
+                position: absolute;
+                border: 6px solid transparent;
+                border-left-color: $primary;
+                right: -12px;
+            }
+        }
+    }
+}
+
+// Alert border left example
+.alert-border-left {
+    border-left: 3px solid;
+}
+
+// alert top border example
+.alert-top-border {
+    background-color: var(--#{$prefix}secondary-bg);
+    border-color: var(--#{$prefix}border-color);
+    border-top: 2px solid;
+    color: var(--#{$prefix}body-color);
+}
+
+//alert additional example
+.alert-additional {
+    padding: 0;
+
+    .alert-body {
+        padding: $alert-padding-y $alert-padding-x;
+    }
+
+    .alert-content {
+        color: var(--#{$prefix}alert-color);
+        padding: $alert-padding-y $alert-padding-x;
+        border-bottom-left-radius: $alert-border-radius;
+        border-bottom-right-radius: $alert-border-radius;
+        margin: 0 calc(#{$alert-border-width} * -1) calc(#{$alert-border-width} * -1) calc(#{$alert-border-width} * -1);
+    }
+}
+
+// rounded label example
+.rounded-label {
+    .label-icon {
+        width: 45px;
+        height: 26px;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 0 30px 30px 0;
+    }
+}
+
+.alert-dismissible {
+    .btn-close {
+        background: transparent !important;
+
+        &::after {
+            background: transparent !important;
+            content: "\F0156" !important;
+            font-size: 18px;
+            line-height: 15px;
+            font-family: "Material Design Icons" !important;
+        }
+    }
+}
+
+// Alert example SASS loop
+@each $state in map-keys($theme-colors) {
+    .alert-#{$state} {
+
+        &.alert-top-border {
+            border-top-color: var(--#{$prefix}#{$state});
+        }
+
+        &:is(.rounded-label, .label-arrow) {
+            .label-icon {
+                background-color: var(--#{$prefix}#{$state});
+
+                &:after {
+                    border-left-color: var(--#{$prefix}#{$state});
+                }
+            }
+        }
+
+        .btn-close::after {
+            color: var(--#{$prefix}#{$state});
+        }
+
+        &.alert-additional {
+            .alert-content {
+                background-color: var(--#{$prefix}#{$state});
+            }
+        }
+    }
+
+}
+
+//Color contrast
+@each $color,
+$value in $theme-colors {
+
+    .alert-#{$color} {
+
+        &:is(.rounded-label, .label-arrow, .alert-additional) :is(.label-icon, .alert-content) {
+            color: color-contrast($value);
+        }
+    }
+}
