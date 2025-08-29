@@ -1,13 +1,56 @@
-.vercel
-*.log
-*.pyc
-__pycache__
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
 
-# Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.venv.bak/
+pip-wheel-metadata/
+
+# Node.js
+node_modules/
+libs/
+
+# Flask instance folder
+instance/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Coverage reports
+.coverage
+htmlcov/
+.coverage.*
+
+# VS Code settings
+.vscode/
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test output
+*.pytest_cache/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Env files
+.env
+.env.*

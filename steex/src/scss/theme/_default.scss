@@ -1,0 +1,198 @@
+//
+// Theme Default
+//
+
+[data-theme="default"] {
+
+    $font-sizes: (
+        "3xs":          0.625rem,
+        "2xs":          0.6875rem,
+        "xs":           0.75rem,
+        "sm":           0.8125rem,
+        "md":           0.875rem,
+        "base":         0.8125rem,
+        "lg":           1rem,
+        "xl":           1.0625rem,
+        "2xl":          1.125rem,
+        "3xl":          1.25rem,
+        "4xl":          1.375rem,
+        "5xl":          1.5rem,
+    );
+
+    $font-weights: (
+        "light"         300,
+        "normal"        400,
+        "medium"        500,
+        "semibold"      600,
+        "bold"          700,
+    );
+
+    // Font Family
+    --#{$prefix}font-sans-serif:                                     "Poppins" ,sans-serif;
+    --#{$prefix}font-monospace:                                      "Poppins" ,sans-serif;
+    
+    --#{$prefix}shadow:                                         rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --#{$prefix}shadow-sm:                                      0 .125rem .25rem  rgba(#{$black}, .075);
+    --#{$prefix}shadow-lg:                                      0 5px 10px  rgba(30, 32, 37, 0.12); 
+    --#{$prefix}element-shadow:                                 none;
+
+    --#{$prefix}grid-gutter-width:                              1.25rem; 
+    
+    --#{$prefix}card-border-width-custom:                       0;
+    --#{$prefix}card-header-border-width:                       0;
+    --#{$prefix}card-bottom-padding:                            0;
+    --#{$prefix}card-shadow:                                    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    
+    //mailbox 
+    --#{$prefix}email-bg:                                          #f8f9fd;
+    --#{$prefix}email-sidebar-bg:                                  #ebf2fb;
+
+    // vertical
+    --#{$prefix}vertical-menu-width:                            250px;
+    --#{$prefix}vertical-menu-width-md:                         180px;
+    --#{$prefix}vertical-menu-width-sm:                         70px;
+    --#{$prefix}header-height:                                  70px;
+    //two columns
+    --#{$prefix}twocolumn-menu-width:                           220px;
+    --#{$prefix}twocolumn-menu-iconview-width:                  70px;
+    --#{$prefix}twocolumn-menu-box-shadow:                      0 2px 4px rgba(15, 34, 58, 0.12);
+
+    //topbar
+    --#{$prefix}page-title-box-shadow:                          0 1px 2px rgba(56, 65, 74, 0.15);
+    --#{$prefix}page-title-border:                              none;
+
+    //  vertical
+    --#{$prefix}vertical-menu-box-shadow:                       0 2px 4px rgba(15, 34, 58, 0.12);
+    --#{$prefix}vertical-menu-item-font-size:                   0.8125rem;
+    --#{$prefix}vertical-menu-sub-item-font-size:               0.8125rem;
+    --#{$prefix}vertical-menu-item-font-weight:                 400;
+
+    //vertical light
+    &[data-sidebar="light"] {
+        --#{$prefix}vertical-menu-bg:                           #{$white};
+        --#{$prefix}vertical-menu-border:                       #{$border-color};
+        --#{$prefix}vertical-menu-item-color:                   #{darken($gray-600, 10%)};
+        --#{$prefix}vertical-menu-item-hover-color:             var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-hover-bg:                var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-active-color:            var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-item-active-bg:               #{rgba($primary, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:               #{darken($gray-600, 4%)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:         var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-sub-item-active-color:        var(--#{$prefix}primary);
+        --#{$prefix}vertical-menu-title-color:                  #919da9;
+        --#{$prefix}twocolumn-menu-iconview-bg:                 #{$white};
+    }
+    
+    
+    // Topbar - (Default Light)
+    &[data-topbar="light"] {
+        --#{$prefix}header-bg:                                      #{$white};
+        --#{$prefix}header-item-color:                              #{$gray-800};
+        --#{$prefix}header-border-color:                            #{$gray-200};
+        --#{$prefix}header-item-sub-color:                          var(--#{$prefix}secondary-color);
+        // Topbar User
+        --#{$prefix}topbar-user-bg:                                 #{rgba($white, .05)};
+        --#{$prefix}topnav-bg:                                      #{$white};
+        --#{$prefix}topnav-item-color:                              #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-item-color-active:                       #{$primary};
+        --#{$prefix}topnav-sub-item-color:                          #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-sub-item-color-active:                   #{$primary};
+    }
+    
+    //footer
+    --#{$prefix}footer-bg:                                      #{$white};
+    --#{$prefix}footer-color:                                   #98a6ad;
+
+    // Horizontal nav
+
+    // twocolumn menu
+    --#{$prefix}twocolumn-menu-bg:                              #{$white};
+
+    // boxed 
+    --#{$prefix}boxed-body-bg:                                  #f5f5f5;
+
+    &[data-sidebar="dark"] {
+        --#{$prefix}vertical-menu-bg:                           #181a20;
+        --#{$prefix}vertical-menu-border:                       #181a20;
+        --#{$prefix}vertical-menu-item-color:                   #97979a;
+        --#{$prefix}vertical-menu-item-hover-color:             #{$gray-200};
+        --#{$prefix}vertical-menu-item-hover-bg:                #222328;
+        --#{$prefix}vertical-menu-item-active-color:            #{$gray-200};
+        --#{$prefix}vertical-menu-item-active-bg:               #222328;
+        --#{$prefix}vertical-menu-sub-item-color:               #97979a;
+        --#{$prefix}vertical-menu-sub-item-hover-color:         #{$gray-200};
+        --#{$prefix}vertical-menu-sub-item-active-color:        #{$gray-200};
+        --#{$prefix}vertical-menu-title-color:                  #97979a;
+        --#{$prefix}twocolumn-menu-iconview-bg:                 #161515;
+    }
+
+    &[data-topbar="dark"] {
+        --#{$prefix}header-bg:                                  #191c22;
+        --#{$prefix}header-item-color:                          #b0c4d9;
+        --#{$prefix}header-item-sub-color:                      #b0c4d9;
+        --#{$prefix}header-border-color:                        #{$border-color-dark};
+        --#{$prefix}topbar-user-bg:                             #{rgba($white, .05)};
+        --#{$prefix}topbar-user-color:                          #{rgba($white, .08)};
+
+        --#{$prefix}topnav-bg:                                      #191c22;
+        --#{$prefix}topnav-item-color:                              #b0c4d9;
+        --#{$prefix}topnav-item-color-active:                       #{$white};
+        --#{$prefix}topnav-sub-item-color:                          #{darken($gray-600, 10%)};
+        --#{$prefix}topnav-sub-item-color-active:                   #{$primary};
+    }
+
+    &:is([data-sidebar="gradient"], [data-sidebar="gradient-2"], [data-sidebar="gradient-3"], [data-sidebar="gradient-4"]) {
+        --#{$prefix}vertical-menu-item-color:                 #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-item-active-bg:             #{rgba($white, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:             #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #{rgba($white, .50)};
+    }
+
+    &[data-sidebar="gradient"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}vertical-menu-border:                     #{$cyan-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$cyan-800};
+    }
+
+    &[data-sidebar="gradient-2"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}vertical-menu-border:                     #{$teal-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$teal-800};
+    }
+
+    &[data-sidebar="gradient-3"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}vertical-menu-border:                     #{$purple-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$purple-800};
+    }
+
+    &[data-sidebar="gradient-4"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}vertical-menu-border:                     #{$green-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$green-800};
+    }
+    
+    @each $name, $value in $font-sizes { 
+        --#{$prefix}font-#{$name}:   #{$value};
+    }
+
+    @each $name, $value in $font-weights { 
+        --#{$prefix}font-weight-#{$name}:   #{$value};
+    }
+
+    &[data-bs-theme="dark"] {
+        //custom secondary dark mode
+        --#{$prefix}secondary:                      #{$secondary-dark};
+        --#{$prefix}secondary-rgb:                  #{to-rgb($secondary-dark)};
+        --#{$prefix}secondary-border-subtle:        #{$secondary-dark};
+    }
+}
+

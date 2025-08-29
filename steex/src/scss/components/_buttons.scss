@@ -1,0 +1,220 @@
+// 
+// _buttons.scss
+// 
+
+.btn {
+    position: relative;
+    box-shadow: var(--#{$prefix}element-shadow);
+
+    &.btn-hover {
+        transition: all 0.5s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}
+
+[class*="btn-outline"],
+[class*="btn-subtle"],
+[class*="btn-ghost"] {
+    box-shadow: none;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    border-color: transparent;
+}
+
+.btn-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(#{$btn-padding-y * 2} + #{$btn-line-height}em + #{$border-width * 2});
+    width: calc(#{$btn-padding-y * 2} + #{$btn-line-height}em + #{$border-width * 2});
+    padding: 0;
+
+    :is(i, svg, img) {
+        vertical-align: middle;
+    }
+
+    &.btn-sm {
+        height: calc(#{$btn-padding-y-sm * 2} + #{$btn-line-height}em + #{$border-width * 2});
+        width: calc(#{$btn-padding-y-sm * 2} + #{$btn-line-height}em + #{$border-width * 2});
+    }
+
+    &.btn-lg {
+        height: calc(#{$btn-padding-y-lg * 2} + #{$btn-line-height}em + #{$border-width * 2});
+        width: calc(#{$btn-padding-y-lg * 2} + #{$btn-line-height}em + #{$border-width * 2});
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+
+    .btn-#{$state} {
+        --#{$prefix}btn-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-border-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$state}-text-emphasis);
+        --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+        --#{$prefix}btn-focus-shadow-rgb: var(--#{$prefix}#{$state}-rgb);
+        --#{$prefix}btn-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
+        --#{$prefix}btn-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+    }
+
+    .btn-outline-#{$state} {
+        --#{$prefix}btn-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-bg: transparent;
+        --#{$prefix}btn-border-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-focus-shadow-rgb: var(--#{$prefix}#{$state}-rgb);
+        --#{$prefix}btn-active-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-active-border-color: var(--#{$prefix}#{$state});
+    }
+
+    // Subtle Buttons
+    .btn-subtle-#{$state} {
+        --#{$prefix}btn-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-bg: var(--#{$prefix}#{$state}-bg-subtle);
+        --#{$prefix}btn-border-color: transparent;
+        --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-hover-border-color: transparent;
+        --#{$prefix}btn-focus-shadow-rgb: var(--#{$prefix}#{$state}-rgb);
+        --#{$prefix}btn-active-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-active-border-color: transparent;
+    }
+
+    // Ghost Buttons
+    .btn-ghost-#{$state} {
+        --#{$prefix}btn-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-bg: transparent;
+        --#{$prefix}btn-border-color: transparent;
+        --#{$prefix}btn-hover-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$state}-bg-subtle);
+        --#{$prefix}btn-hover-border-color: transparent;
+        --#{$prefix}btn-focus-shadow-rgb: var(--#{$prefix}#{$state}-rgb);
+        --#{$prefix}btn-active-color: var(--#{$prefix}#{$state});
+        --#{$prefix}btn-active-bg: var(--#{$prefix}#{$state}-bg-subtle);
+        --#{$prefix}btn-active-border-color: transparent;
+    }
+}
+
+//button with icon
+.btn-label {
+    position: relative;
+    padding-left: calc(#{$btn-padding-x} * 3.7);
+
+    .label-icon {
+        position: absolute;
+        width: 38.28px;
+        left: calc(#{$border-width} * -1);
+        top: calc(#{$border-width} * -1);
+        bottom: calc(#{$border-width} * -1);
+        background-color: rgba($white, 0.1);
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.btn-light {
+        .label-icon {
+            background-color: rgba(var(--#{$prefix}light-rgb), 0.05);
+        }
+    }
+
+    &.right {
+        padding-left: $btn-padding-x;
+        padding-right: calc(#{$btn-padding-x} * 3.7);
+
+        .label-icon {
+            right: calc(#{$border-width} * -1);
+            left: auto;
+        }
+    }
+}
+
+//btn group
+.btn-group-vertical {
+    label {
+        margin-bottom: 0;
+    }
+}
+
+// btn group radio
+.btn-group.radio {
+    .btn {
+        border: none;
+    }
+
+    .btn-check:active+.btn-light,
+    .btn-check:checked+.btn-light,
+    .btn-light.active,
+    .btn-light.dropdown-toggle.show,
+    .btn-light:active {
+        background-color: rgba(var(--#{$prefix}info-rgb), 0.2);
+        color: var(--#{$prefix}info);
+    }
+}
+
+.btn-load {
+
+    :is(.spinner-border, .spinner-grow) {
+        height: 19px;
+        width: 19px;
+    }
+}
+
+.link-effect {
+    position: relative;
+    display: inline-flex;
+    padding-bottom: 3px;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--#{$prefix}primary);
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(0);
+        }
+    }
+}
+
+//custom toggle
+.custom-toggle {
+    .icon-off {
+        display: none;
+    }
+
+    &.active {
+        .icon-on {
+            display: none;
+        }
+
+        .icon-off {
+            display: block;
+        }
+    }
+}
+
+@each $color,
+$value in $theme-colors {
+
+    :is(.btn-subtle-#{$color}, .btn-outline-#{$color}) {
+        --#{$prefix}btn-active-color: #{color-contrast($value)};
+        --#{$prefix}btn-hover-color: #{color-contrast($value)};
+    }
+}

@@ -1,0 +1,91 @@
+// Dark color mode variables
+//
+// Custom variables for the `[data-bs-theme="dark"]` theme. Use this as a starting point for your own custom color modes by creating a new theme-specific file like `_variables-dark.scss` and adding the variables you need.
+
+//
+// Global colors
+//
+
+//dark body bg customization
+$body-bg-dark: #0f1114;
+
+// scss-docs-start sass-dark-mode-vars
+// scss-docs-start theme-text-dark-variables
+$primary-text-emphasis-dark:                            tint-color($primary, 20%);
+$secondary-text-emphasis-dark:                          tint-color($secondary, 20%);
+$success-text-emphasis-dark:                            tint-color($success, 20%);
+$info-text-emphasis-dark:                               tint-color($info, 20%);
+$warning-text-emphasis-dark:                            tint-color($warning, 20%);
+$danger-text-emphasis-dark:                             tint-color($danger, 20%);
+$light-text-emphasis-dark:                              tint-color($body-bg-dark, 25%);
+$dark-text-emphasis-dark:                               #3e4657;
+// scss-docs-end theme-text-dark-variables
+
+// scss-docs-start theme-bg-subtle-dark-variables
+$primary-bg-subtle-dark:                                rgba($primary, 0.15);
+$secondary-bg-subtle-dark:                              rgba($secondary, 0.15);
+$success-bg-subtle-dark:                                rgba($success, 0.15);
+$info-bg-subtle-dark:                                   rgba($info, 0.15);
+$warning-bg-subtle-dark:                                rgba($warning, 0.15);
+$danger-bg-subtle-dark:                                 rgba($danger, 0.15);
+$light-bg-subtle-dark:                                  tint-color($body-bg-dark, 10%);
+$dark-bg-subtle-dark:                                   mix($gray-800, $black);
+// scss-docs-end theme-bg-subtle-dark-variables
+
+// scss-docs-start theme-border-subtle-dark-variables
+$primary-border-subtle-dark:                            shade-color($primary, 50%);
+$secondary-border-subtle-dark:                          shade-color($secondary, 50%);
+$success-border-subtle-dark:                            shade-color($success, 50%);
+$info-border-subtle-dark:                               shade-color($info, 50%);
+$warning-border-subtle-dark:                            shade-color($warning, 50%);
+$danger-border-subtle-dark:                             shade-color($danger, 50%);
+$light-border-subtle-dark:                              tint-color($body-bg-dark, 12%);
+$dark-border-subtle-dark:                               $gray-800;
+// scss-docs-end theme-border-subtle-dark-variables
+
+$body-color-dark:                                       tint-color($body-bg-dark, 80%);
+$body-secondary-color-dark:                             tint-color($body-bg-dark, 60%);
+$body-secondary-bg-dark:                                tint-color($body-bg-dark, 2.5%);
+$body-tertiary-color-dark:                              rgba($body-color-dark, .5);
+$body-tertiary-bg-dark:                                 mix($gray-800, $gray-900, 50%);
+$body-emphasis-color-dark:                              $white;
+$border-color-dark:                                     tint-color($body-bg-dark, 12%);
+$border-color-translucent-dark:                         tint-color($body-bg-dark, 12%);
+$headings-color-dark:                                   null;
+$link-color-dark:                                       tint-color($primary, 40%);
+$link-hover-color-dark:                                 shift-color($link-color-dark, -$link-shade-percentage);
+$code-color-dark:                                       shift-color($code-color, 10%);
+$mark-color-dark:                                       $body-color-dark;
+$mark-bg-dark:                                          $yellow-800;
+//custom only default themes colors
+$light-dark:                                            tint-color($body-bg-dark, 8%);
+$dark-color:                                            #697178;
+$secondary-dark:                                        tint-color($body-bg-dark, 30%);
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:                      $body-color-dark;
+$form-select-indicator-dark:                            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-switch-color-dark:                                rgba($white, .25);
+$form-switch-bg-image-dark:                             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>");
+
+// scss-docs-start form-validation-colors-dark
+$form-valid-color-dark:                                 $green-400;
+$form-valid-border-color-dark:                          $green-400;
+$form-invalid-color-dark:                               $red-400;
+$form-invalid-border-color-dark:                        $red-400;
+// scss-docs-end form-validation-colors-dark
+
+//
+// Accordion
+//
+
+$accordion-icon-color-dark:                             $primary-text-emphasis-dark;
+$accordion-icon-active-color-dark:                      $primary-text-emphasis-dark;
+
+$accordion-button-icon-dark:                            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon-dark:                     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+// scss-docs-end sass-dark-mode-vars

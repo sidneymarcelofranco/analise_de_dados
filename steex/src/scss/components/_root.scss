@@ -1,0 +1,65 @@
+// 
+// root.scss
+//
+
+//theme-light
+:root {
+    --#{$prefix}card-logo-dark:                     block;
+    --#{$prefix}card-logo-light:                    none;
+}
+
+//theme dark
+@if $enable-dark-mode {
+    @include color-mode(dark, true) {
+        
+        
+        &:is([data-theme="default"], [data-theme="minimal"], [data-theme="material"], [data-theme="modern"], [data-theme="creative"], [data-theme="interaction"]) {
+            --#{$prefix}light:                          #{$light-dark};
+            --#{$prefix}light-rgb:                      #{to-rgb($light-dark)};
+            --#{$prefix}light-text-emphasis:            #{$light-text-emphasis-dark};
+            --#{$prefix}light-bg-subtle:                #{$light-bg-subtle-dark};
+            --#{$prefix}light-border-subtle:            #{$light-bg-subtle-dark};
+
+            --#{$prefix}dark:                           #{$dark-color};
+            --#{$prefix}dark-rgb:                       #{to-rgb($dark-color)};
+            --#{$prefix}dark-text-emphasis:             #{$dark-text-emphasis-dark};
+            --#{$prefix}dark-bg-subtle:                 #{$dark-bg-subtle-dark};
+            --#{$prefix}dark-border-subtle:             #{$dark-border-subtle-dark};
+            //custom color scheme
+            --#{$prefix}body-bg:                     #{$body-bg-dark};
+        }
+
+        // card
+        --#{$prefix}card-logo-dark:                 none;
+        --#{$prefix}card-logo-light:                block;
+
+        //footer
+        --#{$prefix}footer-bg:                      #191c22;
+        --#{$prefix}footer-color:                   #{$gray-600};
+
+        --#{$prefix}email-bg:                       #{tint-color($body-bg-dark, 3.5%)};
+        --#{$prefix}email-sidebar-bg:               #{tint-color($body-bg-dark, 5.5%)};
+
+        // boxed 
+        --#{$prefix}boxed-body-bg:                  #{darken($body-bg-dark, 1.5%)};
+
+        //custom components styles
+        .btn-light,
+        .btn-outline-light {
+            --#{$prefix}btn-color: #{$white};
+            --#{$prefix}btn-hover-color: #{$white};
+        }
+
+        .table-light {
+            --tb-table-color:                       #{lighten($light-dark, 100%)};
+            --tb-table-bg:                          var(--#{$prefix}light);
+            --tb-table-border-color:                var(--#{$prefix}border-color);
+            --tb-table-striped-bg:                  var(--#{$prefix}light);
+            --tb-table-striped-color:               #{lighten($light-dark, 100%)};
+            --tb-table-active-bg:                   var(--#{$prefix}light);
+            --tb-table-active-color:                #{lighten($light-dark, 100%)};
+            --tb-table-hover-bg:                    var(--#{$prefix}light);
+            --tb-table-hover-color:                 #{lighten($light-dark, 100%)};
+        }
+    }
+}
