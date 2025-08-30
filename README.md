@@ -18,6 +18,7 @@ This example uses the Web Server Gateway Interface (WSGI) with Flask to enable h
 npm i -g vercel
 set NODE_TLS_REJECT_UNAUTHORIZED=0
 vercel dev
+
 ```
 
 Your Flask application is now available at `http://localhost:3000`.
