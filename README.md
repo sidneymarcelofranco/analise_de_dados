@@ -16,6 +16,7 @@ This example uses the Web Server Gateway Interface (WSGI) with Flask to enable h
 
 ```bash
 npm i -g vercel
+set NODE_TLS_REJECT_UNAUTHORIZED=0
 vercel dev
 ```
 

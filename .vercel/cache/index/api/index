@@ -1,4 +1,4 @@
-from steex import create_app
+from analise_de_dados import create_app
 from flask import redirect, url_for
 
 app = create_app()

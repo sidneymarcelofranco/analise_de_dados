@@ -136,18 +136,6 @@ class _RefCountChecker(object):
     # presumably.
     IGNORED_TYPES = () #(tuple, dict, types.FrameType, types.TracebackType)
 
-    # Names of types that should be ignored. Use this when we cannot
-    # or don't want to import the class directly.
-    IGNORED_TYPE_NAMES = (
-        # This appears in Python3.14 with the JIT enabled. It
-        # doesn't seem to be directly exposed to Python; the only way to get
-        # one is to cause code to get jitted and then look for all objects
-        # and find one with this name. But they multiply as code
-        # executes and gets jitted, in ways we don't want to rely on.
-        # So just ignore it.
-        'uop_executor',
-    )
-
     def __init__(self, testcase, function):
         self.testcase = testcase
         self.function = function
@@ -191,13 +179,8 @@ class _RefCountChecker(object):
                 return False
 
 
-        if (
-            kind in self.ignored_types
-            or kind in self.IGNORED_TYPES
-            or kind.__name__ in self.IGNORED_TYPE_NAMES
-        ):
+        if kind in self.ignored_types or kind in self.IGNORED_TYPES:
             return False
-
 
         return True
 

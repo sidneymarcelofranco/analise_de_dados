@@ -1,4 +1,4 @@
-from steex import create_app
+from analise_de_dados import create_app
 
 app = create_app()
 
