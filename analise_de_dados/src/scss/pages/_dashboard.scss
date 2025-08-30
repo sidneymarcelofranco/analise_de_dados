@@ -1,0 +1,42 @@
+// 
+// _dashboard.scss
+// 
+
+.courses-calendar-dashboard {
+    .date-calendar {
+        .week {
+            width: 35px;
+            text-align: center;
+
+            @media (max-width: 575.98px) {
+                width: 28px;
+            }
+
+            .avatar-title {
+                color: var(--#{$prefix}body-color);
+                background-color: var(--#{$prefix}light);
+                height: 35px;
+            }
+
+            &:hover {
+                .avatar-title {
+                    color: var(--#{$prefix}primary);
+                }
+            }
+
+            &:is(.active, .active:hover) {
+                .avatar-title {
+                    height: 35px;
+                    color: $white;
+                    background-color: var(--#{$prefix}primary);
+                }
+            }
+        }
+    }
+}
+
+.sales-report-chart{
+    @media (min-width: 1200px) and (max-width: 1650.98px) {
+        margin-top: 0 !important;
+    }
+}

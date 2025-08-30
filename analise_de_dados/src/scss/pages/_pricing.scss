@@ -1,0 +1,13 @@
+//
+// _pricing.scss
+//
+
+.pricing-box {
+    li {
+        &.active {
+            &::marker {
+                color: var(--#{$prefix}primary);
+            }
+        }
+        }
+}

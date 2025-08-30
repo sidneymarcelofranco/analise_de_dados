@@ -1,0 +1,39 @@
+{% extends 'partials/base.html' %}
+{% block html %} data-layout="vertical" data-layout-style="detached" data-sidebar="dark" data-sidebar-size="lg" data-preloader="disable" data-theme="modern" data-bs-theme="light" {% endblock html %} 
+
+{% block title %} Detached Layout {% endblock title %} 
+
+{% block extra_css %}
+
+    <!-- jsvectormap css -->
+    <link href="{{url_for('static', filename='libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css">
+
+{% endblock extra_css %}
+
+{% block content %}  
+              
+{% endblock content %}
+
+
+{% block extra_js %}
+
+    <!-- apexcharts -->
+    <script src="{{url_for('static', filename='libs/apexcharts/apexcharts.min.js')}}"></script>
+
+    <!-- Echarts -->
+    <script src="{{url_for('static', filename='libs/echarts/echarts.min.js')}}"></script>
+
+    <!-- Vector map-->
+    <script src="{{url_for('static', filename='libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='libs/jsvectormap/maps/world-merc.js')}}"></script>
+
+    <script src="{{url_for('static', filename='libs/list.js/list.min.js')}}"></script>
+
+    <!-- dashboard-analytics init js -->
+    <script src="{{url_for('static', filename='js/pages/dashboard-analytics.init.js')}}"></script>
+
+{% endblock extra_js %}
+
+
+
+      

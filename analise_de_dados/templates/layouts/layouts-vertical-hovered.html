@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% block html %}data-layout="vertical" data-sidebar="dark" data-sidebar-size="sm-hover" data-preloader="enable" data-theme="minimal" data-bs-theme="light" {% endblock html %} 
+
+{% block title %} Vertical Hovered {% endblock title %} 
+
+{% block content %} 
+                  
+{% endblock content %}
+
+
+{% block extra_js %}
+
+    <!-- list js-->
+    <script src="{{url_for('static', filename='libs/list.js/list.min.js')}}"></script>
+    <script src="{{url_for('static', filename='libs/list.pagination.js/list.pagination.min.js')}}"></script>
+
+    <!-- apexcharts -->
+    <script src="{{url_for('static', filename='libs/apexcharts/apexcharts.min.js')}}"></script>
+
+    <!--dashboard crm init js-->
+    <script src="{{url_for('static', filename='js/pages/dashboard-crm.init.js')}}"></script>
+
+
+{% endblock extra_js %}
+        
+
+ 
+

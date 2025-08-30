@@ -1,0 +1,144 @@
+{% block sidebar %}
+
+<!-- ========== App Menu ========== -->
+<div class="app-menu navbar-menu">
+    <!-- LOGO -->
+    <div class="navbar-brand-box">
+        <a href="/" class="logo logo-dark">
+            <span class="logo-sm">
+                <img src="{{url_for('static' ,filename='images/logo-sm.png')}}" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+                <img src="{{url_for('static' ,filename='images/logo-sidney-dark.svg')}}" alt="" height="22">
+            </span>
+        </a>
+        <a href="/" class="logo logo-light">
+            <span class="logo-sm">
+                <img src="{{url_for('static' ,filename='images/logo-sm.png')}}" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+                <img src="{{url_for('static' ,filename='images/logo-sidney-light.svg')}}" alt="" height="22">
+            </span>
+        </a>
+        <button type="button" class="btn btn-sm p-0 fs-3xl header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+            <i class="ri-record-circle-line"></i>
+        </button>
+    </div>
+
+    <div id="scrollbar">
+        <div class="container-fluid">
+
+            <div id="two-column-menu">
+            </div>
+            <ul class="navbar-nav" id="navbar-nav">
+
+                <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link collapsed" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <i class="ph-gauge"></i> <span data-key="t-dashboards">Dashboards</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link" data-key="t-dashboard"> Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-key="t-ibge"> IBGE </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-key="t-financeiro"> Financeiro </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-key="t-mapa_sp"> Mapa de São Paulo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-key="t-other"> Outros </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+               
+                <li class="nav-item">
+                    <a href="#" class="nav-link menu-link"> <i class="ph-calendar"></i> <span data-key="t-calendar">Workshops</span> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link menu-link"> <i class="ph-chats"></i> <span data-key="t-chat">Chat</span> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link collapsed" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                        <i class="ph-user-circle"></i> <span data-key="t-authentication">Authentication</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarAuth">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="/pages/authentication/signin" class="nav-link" role="button" data-key="t-signin"> Sign In </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/pages/authentication/signup" class="nav-link" role="button" data-key="t-signup"> Sign Up </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/pages/authentication/password_reset" class="nav-link" role="button" data-key="t-password-reset">
+                                    Password Reset
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/pages/authentication/password_create" class="nav-link" role="button" data-key="t-password-create">
+                                    Password Create
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/pages/authentication/lockscreen" class="nav-link" role="button" data-key="t-lock-screen">
+                                    Lock Screen
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/pages/authentication/logout" class="nav-link" role="button" data-key="t-logout"> Logout </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/pages/authentication/success_message" class="nav-link" role="button" data-key="t-success-message"> Success Message </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/pages/authentication/two_step" class="nav-link" role="button" data-key="t-two-step-verification"> Two Step Verification </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarErrors" data-key="t-errors"> Errors </a>
+                                <div class="collapse menu-dropdown" id="sidebarErrors">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="/pages/authentication/errors/404error" class="nav-link" data-key="t-404-error"> 404 Error </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/pages/authentication/errors/500error" class="nav-link" data-key="t-500"> 500 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/pages/authentication/errors/503error" class="nav-link" data-key="t-503"> 503 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/pages/authentication/errors/offline" class="nav-link" data-key="t-offline-page"> Offline Page </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                        <!-- Sidebar -->
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+
+    <div class="sidebar-background"></div>
+</div>
+<!-- Left Sidebar End -->
+<!-- Vertical Overlay-->
+<div class="vertical-overlay"></div>
+
+
+{% endblock sidebar %}

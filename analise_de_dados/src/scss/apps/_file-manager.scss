@@ -1,0 +1,88 @@
+//
+// _file-manager.scss
+//
+
+.file-manager-wrapper {
+    width: 450px;
+    min-height: calc(100vh - #{$grid-gutter-width} - #{$footer-height});
+
+    [data-simplebar],
+    .simplebar-content {
+        height: 100%;
+    }
+
+    @media (max-width: 991.98px) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        max-width: 100%;
+        z-index: 1003;
+        box-shadow: $box-shadow-lg !important;
+        transform: translateX(-100%);
+        visibility: hidden;
+        height: 100vh;
+
+        &.menubar-show {
+            visibility: visible;
+            transform: none;
+        }
+    }
+}
+
+.file-manager-menu {
+    a {
+        display: block;
+        padding: 8px 0;
+        color: var(--#{$prefix}body-color);
+        transition: all 0.5s ease;
+
+        &:hover {
+            color: var(--#{$prefix}link-color);
+        }
+    }
+}
+
+.file-manager-right-wrapper {
+    width: 500px;
+    min-height: calc(100vh - #{$grid-gutter-width} - #{$footer-height});
+    display: none;
+}
+
+.file-detail-show {
+    .file-manager-right-wrapper {
+        display: block;
+    }
+}
+
+
+@media (max-width: 1399.98px) {
+    .file-manager-right-wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: 0;
+        width: 400px;
+        max-width: 100%;
+        z-index: 1004;
+        box-shadow: $box-shadow-lg !important;
+        transform: translateX(100%);
+        height: 100vh;
+    }
+
+    .file-detail-show {
+        .file-manager-right-wrapper {
+            transform: none;
+        }
+    }
+}
+
+
+.file-manager-widgets {
+    background-image: url("../images/effect-pattern/pattern.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

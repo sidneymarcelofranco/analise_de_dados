@@ -1,0 +1,38 @@
+//
+// _card.scss
+//
+
+// credit card widget
+.card-wrapper {
+    .jp-card {
+
+        .jp-card-back,
+        .jp-card-front {
+            background-color: var(--#{$prefix}primary);
+        }
+
+        .jp-card-identified {
+            box-shadow: $box-shadow;
+        }
+
+        .jp-card-front {
+            .jp-card-lower {
+                font-family: $font-family-base;
+
+                .jp-card-name {
+                    font-family: $font-family-base;
+                    font-size: var(--#{$prefix}font-lg);
+                }
+
+                .jp-card-number {
+                    font-family: $font-family-base;
+                    font-size: var(--#{$prefix}font-5xl);
+                }
+
+                .jp-card-expiry {
+                    font-family: $font-family-base;
+                }
+            }
+        }
+    }
+}

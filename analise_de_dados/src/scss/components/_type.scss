@@ -1,0 +1,90 @@
+// 
+// type.scss
+//
+
+// Text colors
+.text-white-75 {
+    color: rgba($white, 0.75) !important;
+}
+
+// Blockquote
+.custom-blockquote {
+    &.blockquote {
+        padding: 16px;
+        border-left: 3px solid;
+
+        &.blockquote-outline {
+            background-color: var(--#{$prefix}secondary-bg) !important;
+            border: 1px solid;
+            border-left: 3px solid;
+        }
+    }
+}
+
+@each $state in map-keys($theme-colors) {
+    .custom-blockquote {
+        &.blockquote {
+            &.blockquote-#{$state} {
+                color: var(--#{$prefix}#{$state});
+                border-color: var(--#{$prefix}#{$state});
+                background-color: var(--#{$prefix}#{$state}-bg-subtle);
+
+                .blockquote-footer {
+                    color: var(--#{$prefix}#{$state});
+                }
+            }
+
+            &.blockquote-outline {
+                &.blockquote-#{$state} {
+                    border-color: var(--#{$prefix}#{$state});
+
+                    .blockquote-footer {
+                        color: var(--#{$prefix}#{$state});
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rotating-border {
+    --border-radius: 1rem;
+    --border-size: 0.5rem;
+    --border-bg: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    --padding: 1rem;
+
+    position: relative;
+    overflow: hidden;
+    font-size: 2rem;
+    padding: calc(var(--padding) + var(--border-size));
+    border-radius: var(--border-radius);
+    display: inline-block;
+
+    &::before {
+        content: '';
+        display: block;
+        background: var(--border-bg);
+        width: calc(100% * 1.41421356237);
+        padding-bottom: calc(100% * 1.41421356237);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        z-index: -2;
+        animation: spin 5s linear infinite;
+    }
+
+    &--reverse::before {
+        animation-direction: reverse;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: var(--border-size);
+        background: white;
+        z-index: -1;
+        border-radius: calc(var(--border-radius) - var(--border-size));
+    }
+}

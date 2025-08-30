@@ -1,4 +1,4 @@
-# Python-generated files
+# Python
 __pycache__/
 *.py[oc]
 *.pyo
@@ -8,6 +8,8 @@ dist/
 wheels/
 *.egg-info/
 *.egg
+__pypackages__/
+pip-log.txt
 
 # Virtual environments
 .venv/
@@ -38,10 +40,8 @@ logs/
 htmlcov/
 .coverage.*
 .pytest_cache/
-.cache/
-nosetests.xml
-coverage.xml
-*.cover
+.mypy_cache/
+coverage/
 .nyc_output/
 
 # VS Code settings
@@ -79,3 +79,13 @@ tmp/
 
 # Database migrations (Flask-Migrate)
 migrations/versions/*.pyc
+
+# Lock files
+poetry.lock
+Pipfile.lock
+uv.lock
+
+# Backup/config
+*.bak
+*.orig
+*.old

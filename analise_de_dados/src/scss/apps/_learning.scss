@@ -1,0 +1,110 @@
+//
+// _learning.scss
+//
+
+.learning-widgets {
+    height: 202px;
+
+    .effect {
+        position: absolute;
+        opacity: 0.1;
+        height: 10.5rem;
+        width: 10.5rem;
+    }
+}
+
+// Flatpickr Calendar
+.upcoming-scheduled {
+    position: relative;
+
+    @media (max-width: 575.98px) {
+        top: 35px !important;
+    }
+
+    .flatpickr-months {
+        position: absolute !important;
+        top: -45px !important;
+        right: auto !important;
+        left: -14px !important;
+        width: 200px;
+        background-color: transparent;
+
+        .flatpickr-month {
+            color: $gray-600 !important;
+            fill: $gray-600 !important;
+        }
+
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            display: none;
+        }
+    }
+
+    .flatpickr-calendar {
+        box-shadow: none !important;
+
+        .flatpickr-current-month {
+            font-size: 13px;
+            width: 100%;
+            left: 0;
+        }
+
+        .flatpickr-monthDropdown-months {
+            border: 1px solid var(--#{$prefix}border-color);
+            border-radius: 4px;
+            height: 26px;
+        }
+
+        .flatpickr-weekdays {
+            background-color: var(--#{$prefix}light);
+            border: none;
+
+            span.flatpickr-weekday {
+                color: var(--#{$prefix}body-color);
+                background-color: var(--#{$prefix}light);
+            }
+        }
+
+        .flatpickr-day {
+            &.today {
+                color: $white !important;
+                background-color: var(--#{$prefix}primary);
+                border-color: var(--#{$prefix}primary) !important;
+
+                &:hover {
+                    color: var(--#{$prefix}primary) !important;
+                    background-color: rgba(var(--#{$prefix}primary-rgb), 0.2) !important;
+                }
+            }
+
+            &.selected {
+                background-color: var(--#{$prefix}primary) !important;
+                border-color: var(--#{$prefix}primary) !important;
+                color: $white;
+            }
+        }
+
+        .numInputWrapper {
+            width: 7.5ch;
+            margin-left: 10px;
+        }
+    }
+
+    .flatpickr-days {
+        border: none !important;
+    }
+}
+
+.instructor-profile {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.learning-dash-row{
+    > .col-xxl-3{
+        @media (max-width: 1700px) {
+            width: 100%;
+        }
+    }
+}
